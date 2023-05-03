@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <div class="logo__container">
+        <div class="logo"></div>
+        <h1 class="logo__title">Kenzie Empresas</h1>
+      </div>
+      <div class="button__div">
+        <button class="home__button">Home</button>
+        <button class="login__button">Login</button>
+      </div>
+    </header>
+    <main class="register__main">
+      <dialog class="modal__controller" open>
+        <div class="modal__div">
+          <h1 class="modal__title">Cadastre-se</h1>
+          <form action="">
+            <input class="input__name" type="text" placeholder="Seu nome" />
+            <input class="input__email" type="email" placeholder="Seu e-mail" />
+            <input
+              class="input__password"
+              type="password"
+              placeholder="Sua senha"
+            />
+            <button class="input__button-sign">Cadastrar</button>
+            <button class="input__button-goBack">Retornar</button>
+          </form>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>

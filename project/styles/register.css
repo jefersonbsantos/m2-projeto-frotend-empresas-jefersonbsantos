@@ -1,0 +1,153 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 0 150px;
+  border-bottom: 1px solid #00000010;
+}
+
+.logo__container {
+  display: flex;
+  gap: 10px;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--brand-1);
+}
+
+.logo__title {
+  font-weight: var(--title-1-weight);
+  font-size: var(--title-1-size);
+  line-height: var(--title-1-height);
+  font-family: var(--font-1);
+}
+
+.button__div {
+  display: flex;
+  gap: 10px;
+}
+
+.home__button {
+  cursor: pointer;
+  width: 142px;
+  height: 48px;
+  font-weight: var(--title-1-weight);
+  font-size: var(--title-2-size);
+  background-color: transparent;
+  border: 1px solid var(--brand-2);
+  color: var(--brand-2);
+}
+
+.home__button:hover {
+  background-color: var(--brand-1);
+  border: none;
+  color: var(--mode);
+}
+
+.login__button {
+  cursor: pointer;
+  width: 142px;
+  height: 48px;
+  font-weight: var(--title-1-weight);
+  font-size: var(--title-2-size);
+  background-color: var(--brand-2);
+  color: var(--mode);
+  border: none;
+}
+
+.login__button:hover {
+  background-color: var(--brand-1);
+}
+
+.register__main {
+  width: 100%;
+  height: 93.95vh;
+  background-image: url(../assets/Rectangle\ 7.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal__controller {
+  margin: 12% auto;
+  width: 506px;
+  height: max-content;
+  background-color: #ffffffec;
+}
+
+.modal__div {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+}
+
+.modal__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 30px;
+}
+
+.input__name {
+  width: 440px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #00000020;
+}
+
+.input__email {
+  width: 440px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #00000020;
+}
+
+.input__password {
+  width: 440px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #00000020;
+}
+
+.input__button-sign {
+  cursor: pointer;
+  width: 440px;
+  height: 38px;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--brand-2);
+  color: var(--mode);
+  border: transparent;
+  margin-bottom: 20px;
+}
+
+.input__button-sign:hover {
+  background-color: var(--brand-1);
+}
+
+.input__button-goBack {
+  cursor: pointer;
+  width: 440px;
+  height: 38px;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--brand-1);
+  border: 1px solid var(--brand-1);
+}
+
+.input__button-goBack:hover {
+  background-color: var(--brand-1);
+  color: var(--mode);
+  border: none;
+}

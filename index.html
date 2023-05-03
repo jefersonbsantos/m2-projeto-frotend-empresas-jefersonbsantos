@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./project/styles/reset.css" />
+    <link rel="stylesheet" href="./project/styles/globalStyles.css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <div class="logo__container">
+        <div class="logo"></div>
+        <h1 class="logo__title">Kenzie Empresas</h1>
+      </div>
+      <div class="button__div">
+        <button class="login__button">Login</button>
+        <button class="sign-in__button">Cadastro</button>
+      </div>
+    </header>
+    <main class="main__container">
+      <section class="left__section">
+        <figure>
+          <img
+            class="img"
+            src="./project/assets/Rectangle 6.png"
+            alt="Reunião de negócios"
+          />
+        </figure>
+      </section>
+      <section class="right__section">
+        <select name="Selecionar setor" id="" class="select">
+          <option value="selecionar setor" hidden>Selecionar setor</option>
+        </select>
+        <ul class="sector__container">
+          <h1 class="sector__title">Lista de Empresas</h1>
+          <li class="card__container">
+            <div class="card__content">
+              <h3 class="card__title">Nome da Empresa</h3>
+              <button class="card__button">Setor</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+@import url(./index.css);
+@import url(./login.css);
+@import url(./register.css);
+@import url(./user.css);
+@import url(./admin.css);
+:root {
+  --brand-1: #6741d9;
+  --brand-2: #4c3299;
+
+  --action-1: #36b37e;
+  --action-2: #ff5630;
+  --action-3: #ffab00;
+
+  --grey-1: #212529;
+  --grey-2: #495057;
+  --grey-3: #adb5bd;
+  --grey-4: #e9ecef;
+  --grey-5: #f1f3f5;
+  --mode: #ffffff;
+
+  --font-1: "Inter", sans-serif;
+
+  --title-1-weight: 600;
+  --title-1-size: 1.2rem;
+  --title-1-height: 1.4rem;
+
+  --title-2-weight: 600;
+  --title-2-size: 1rem;
+  --title-2-height: 1.2rem;
+
+  --title-1-weight: 600;
+  --title-1-size: 1.2rem;
+  --title-1-height: 1.4rem;
+
+  --text-1-weight: 400;
+  --text-1-size: 0.875rem;
+  --text-1-height: 1.2rem;
+
+  --text-2-weight: 500;
+  --text-2-size: 0.875rem;
+  --text-2-height: 1rem;
+
+  --text-3-weight: 600;
+  --text-3-size: 0.875rem;
+  --text-3-height: 1rem;
+
+  --text-4-weight: 500;
+  --text-4-size: 0.75rem;
+  --text-4-height: 1.2rem;
+}
+
+* {
+  font-family: var(--font-1);
+}
