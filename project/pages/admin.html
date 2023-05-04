@@ -30,12 +30,27 @@
       <select class="company__select" name="Selecionar Empresa" id="">
         <option value="Selecionar Empresa" hidden>Selecionar Empresa</option>
       </select>
-      <div class=" ">
-        <h1>Departamentos</h1>
-        <button>+ Criar</button>
+      <div class="department__title-button">
+        <h1 class="department__title">Departamentos</h1>
+        <button class="department__button">+ Criar</button>
       </div>
       <ul class="department__container">
-        <li class="department"></li>
+        <li class="department">
+          <div class="text__container">
+            <h3 class="department__name">DepartamentoNome</h3>
+            <span class="department__description">DepartamentoDescrição</span>
+            <span class="department__company">NomeCompanhia</span>
+          </div>
+          <div class="icons__container">
+            <img src="../assets/Vector.png" alt="" />
+            <img src="../assets/Vector (1).png" alt="" />
+            <img src="../assets/Vector (2).png" alt="" />
+          </div>
+        </li>
+      </ul>
+      <h1 class="users__title">Usuários cadastrados</h1>
+      <ul class="users__container">
+        <li class="user__card"></li>
       </ul>
     </main>
   </body>
