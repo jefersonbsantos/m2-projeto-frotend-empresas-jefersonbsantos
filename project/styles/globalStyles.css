@@ -4,8 +4,8 @@
 @import url(./user.css);
 @import url(./admin.css);
 :root {
-  --brand-1: #6741d9;
-  --brand-2: #4c3299;
+  --brand-1: #0000ff;
+  --brand-2: #3532ff;
 
   --action-1: #36b37e;
   --action-2: #ff5630;
