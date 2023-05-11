@@ -34,8 +34,14 @@
           <h1 class="modal__title">Login</h1>
           <p class="modal__text">Preencha os campos para realizar login</p>
           <form action="">
-            <input class="input__email" type="email" placeholder="Seu e-mail" />
             <input
+              name="email"
+              class="input__email"
+              type="email"
+              placeholder="Seu e-mail"
+            />
+            <input
+              name="password"
               class="input__password"
               type="password"
               placeholder="Sua senha"
@@ -48,4 +54,5 @@
       </dialog>
     </main>
   </body>
+  <script type="module" src="../scripts/login.js"></script>
 </html>

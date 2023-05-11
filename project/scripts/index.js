@@ -57,7 +57,8 @@ async function getCompanies(category_name) {
           createH3.innerHTML = index.name;
           const categories = await getAllCategories();
           const sector = categories.find((element) => {
-            return element.id === index.category_id;
+            const result = element.id === index.category_id;
+            return result;
           });
           createSpan.className = "card__span";
           createSpan.innerHTML = sector.name;
