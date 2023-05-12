@@ -23,6 +23,16 @@ async function login(body) {
     if (res.ok) {
       const token = await res.json();
       localStorage.setItem("token", JSON.stringify(token.authToken));
+      localStorage.setItem("isAdm", JSON.stringify(token.isAdm));
+
+      const teste = localStorage.getItem("isAdm");
+
+      if (JSON.parse(teste)) {
+        location.replace("./admin.html");
+      } else {
+        location.replace("./user.html");
+      }
+
       return token;
     } else {
       const test = await res.json();
@@ -52,8 +62,7 @@ async function handleLogin() {
       count = 0;
       alert("Por favor, preencha os campos corretamente");
     } else {
-      const token = await login(body);
-      location.replace("./user.html");
+      login(body);
     }
   });
 }
