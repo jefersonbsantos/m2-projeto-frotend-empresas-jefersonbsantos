@@ -53,7 +53,6 @@ async function getCompanyDepartment(department_id) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       const createDiv = document.createElement("div");
       const createTitle = document.createElement("h1");
 
