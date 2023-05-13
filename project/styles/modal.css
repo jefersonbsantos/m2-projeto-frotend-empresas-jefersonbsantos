@@ -1,0 +1,72 @@
+.modal__create-department {
+  margin: 25% auto;
+  width: 506px;
+  height: 390px;
+  background-color: #ffffffec;
+}
+
+.create__department-div {
+  display: flex;
+  flex-direction: column;
+  /* padding: 40px; */
+}
+
+.create__department--close {
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding-inline: 15px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.create__department-title {
+  font-family: var(--font-1);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  margin-bottom: 25px;
+  padding-left: 40px;
+}
+
+.create__department-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}
+
+.create__department-name {
+  width: 414px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.create__department-description {
+  width: 414px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.create__department-select {
+  width: 422px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.create-department__button {
+  width: 422px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: var(--action-1);
+  border: none;
+  color: var(--mode);
+  cursor: pointer;
+}

@@ -57,6 +57,61 @@
         </ul>
       </div>
     </dialog>
+    <dialog class="modal__create-department">
+      <div class="create__department-div">
+        <button class="create__department--close">X</button>
+        <h1 class="create__department-title">Criar Departamento</h1>
+        <form class="create__department-form" action="">
+          <input
+            class="create__department-name"
+            type="text"
+            placeholder="Nome do departamento"
+          />
+          <input
+            class="create__department-description"
+            type="text"
+            placeholder="Descrição"
+          />
+          <select
+            class="create__department-select"
+            name=""
+            id=""
+            value="Selecionar Empresa"
+          >
+            <option value="Selecionar Empresa" hidden>
+              Selecionar Empresa
+            </option>
+          </select>
+          <button class="create-department__button">Criar</button>
+        </form>
+      </div>
+    </dialog>
+    <dialog class="edit__department-modal">
+      <div class="edit__department-div">
+        <button class="edit__department-close">X</button>
+        <h1 class="edit__department-title">Editar Departamento</h1>
+        <textarea
+          name=""
+          class="edit__department-text"
+          cols="30"
+          rows="10"
+          placeholder="Valores anteriores da descrição"
+        ></textarea>
+        <button class="edit__department-button">Salvar</button>
+      </div>
+    </dialog>
+    <dialog class="delete__department-modal">
+      <div class="delete__depatment-div">
+        <h1 class="delete__department-title">
+          Realmente deseja rmeover o Departamento<span
+            class="delete__department-department"
+          >
+            Nome </span
+          >e demitir seus funcionários?
+        </h1>
+        <button class="delete__department-button">Remover</button>
+      </div>
+    </dialog>
   </body>
   <script type="module" src="../scripts/admin.js"></script>
 </html>

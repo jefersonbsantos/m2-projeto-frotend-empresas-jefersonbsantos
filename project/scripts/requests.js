@@ -23,3 +23,19 @@ export async function getCompaniesreadById(company_id) {
     .then((data) => data);
   return companies;
 }
+
+export async function getDepartmentsReadById(department_id) {
+  const departments = await fetch(
+    `${url}/departments/readById/${department_id}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => data);
+  return departments;
+}
