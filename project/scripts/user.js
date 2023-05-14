@@ -2,7 +2,6 @@ import { url } from "./requests.js";
 const token = JSON.parse(localStorage.getItem("token"));
 function logout() {
   const button = document.querySelector(".logout__button");
-  1;
   button.addEventListener("click", () => {
     localStorage.clear();
     location.replace("./login.html");
@@ -69,7 +68,7 @@ async function getCompanyDepartment(department_id) {
         const createLi = document.createElement("li");
         const createP = document.createElement("p");
 
-        createUl.className = "employee__name";
+        createUl.className = "employee__list";
         createLi.className = "employee";
         createP.className = "employee__name";
         createP.innerHTML = index.name;

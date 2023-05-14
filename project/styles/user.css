@@ -109,7 +109,7 @@
 
 .employee__list {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   flex-wrap: wrap;
   padding: 30px 50px;
   gap: 30px;

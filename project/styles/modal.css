@@ -1,8 +1,9 @@
 .modal__create-department {
-  margin: 25% auto;
+  font-family: var(--font-1);
+  margin: 15% auto;
   width: 506px;
   height: 390px;
-  background-color: #ffffffec;
+  background-color: #ffffff;
 }
 
 .create__department-div {
@@ -15,14 +16,14 @@
   align-self: flex-end;
   background-color: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
   padding-inline: 15px;
   padding-top: 5px;
   cursor: pointer;
 }
 
 .create__department-title {
-  font-family: var(--font-1);
   font-weight: 700;
   font-size: 36px;
   line-height: 50px;
@@ -69,4 +70,216 @@
   border: none;
   color: var(--mode);
   cursor: pointer;
+}
+
+.admin__view-modal {
+  font-family: var(--font-1);
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.admin__view-div {
+  background-color: var(--mode);
+  display: flex;
+  width: 857px;
+  height: 637px;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.admin__view-close {
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
+  font-weight: bold;
+  border: 1px solid transparent;
+  font-size: 18px;
+}
+
+.admin__view-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+.admin__view-title2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.admin__view-span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.admin__view-div-select {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.admin__view-select {
+  width: 565px;
+  height: 38px;
+}
+
+.admin__view-hire-button {
+  cursor: pointer;
+  background-color: #36b37e;
+  border: none;
+  color: var(--mode);
+  font-weight: 700;
+  font-size: 1rem;
+  width: 190px;
+  height: 38px;
+  margin-left: 20px;
+}
+
+.view-list__container {
+  display: flex;
+  width: 775px;
+  height: 290px;
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.admin__view-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--mode);
+  width: 306px;
+  height: 196px;
+  padding: 20px;
+}
+
+.view-card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 5px;
+}
+
+.view-card__span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 50px;
+}
+
+.view-card__button {
+  cursor: pointer;
+  width: 255px;
+  height: 38px;
+  background-color: transparent;
+  border: 1px solid #ff5630;
+  color: #ff5630;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.view-card__button:hover {
+  background-color: #ff5630;
+  border: 1px solid transparent;
+  color: var(--mode);
+}
+
+.edit__department-modal {
+  font-family: var(--font-1);
+  margin: auto;
+}
+
+.edit__department-div {
+  display: flex;
+  flex-direction: column;
+  width: 506px;
+  height: 330px;
+  background-color: var(--mode);
+  padding: 0 40px 15px 40px;
+}
+
+.edit__department-close {
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit__department-title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+.edit__department-text {
+  width: 410px;
+  height: 113px;
+  resize: none;
+  font-weight: 400;
+  font-size: 0.9rem;
+  border: 1px solid #00000030;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+.edit__department-button {
+  width: 422px;
+  height: 38px;
+  background-color: #36b37e;
+  color: var(--mode);
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+}
+
+.delete__department-modal {
+  font-family: var(--font-1);
+  margin: auto;
+}
+
+.delete__depatment-div {
+  display: flex;
+  flex-direction: column;
+  width: 533px;
+  height: 250px;
+  background-color: var(--mode);
+  padding: 20px;
+}
+
+.delete__department-close {
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
+  font-weight: bold;
+  border: 1px solid transparent;
+  font-size: 18px;
+}
+
+.delete__department-title {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 35px;
+}
+
+.delete__department-department {
+}
+
+.delete__department-button {
+  width: 422px;
+  height: 38px;
+  background-color: #ff5630;
+  border: none;
+  color: var(--mode);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 auto;
 }

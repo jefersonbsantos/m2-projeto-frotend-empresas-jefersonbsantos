@@ -38,25 +38,31 @@
       <h1 class="users__title">Usuários cadastrados</h1>
       <ul class="users__container"></ul>
     </main>
-    <dialog class="admin-modal-view__controller">
-      <div class="admin-view__div">
-        <button>X</button>
-        <h1>Nome do departamento</h1>
-        <h3>Descrição do departamento</h3>
-        <span>Empresa Pertencente</span>
-        <div>
-          <select name="" id="">
+    <!-- Modal Visualizar Departamento -->
+    <dialog class="admin__view-modal">
+      <div class="admin__view-div">
+        <button class="admin__view-close">X</button>
+        <h1 class="admin__view-title">Nome do departamento</h1>
+        <h3 class="admin__view-title2">Descrição do departamento</h3>
+        <span class="admin__view-span">Empresa Pertencente</span>
+        <div class="admin__view-div-select">
+          <select class="admin__view-select" name="" id="">
             <option value="Selecionar usuário" hidden>
               Selecionar usuário
             </option>
           </select>
-          <button>Contratar</button>
+          <button class="admin__view-hire-button">Contratar</button>
         </div>
         <ul class="view-list__container">
-          <li class=""></li>
+          <li class="admin__view-card">
+            <h3 class="view-card__title">Username</h3>
+            <span class="view-card__span">Company Name</span>
+            <button class="view-card__button">Desligar</button>
+          </li>
         </ul>
       </div>
     </dialog>
+    <!-- Modal Criar Departamento -->
     <dialog class="modal__create-department">
       <div class="create__department-div">
         <button class="create__department--close">X</button>
@@ -85,6 +91,7 @@
           <button class="create-department__button">Criar</button>
         </form>
       </div>
+      <!-- Modal Editar Departamento -->
     </dialog>
     <dialog class="edit__department-modal">
       <div class="edit__department-div">
@@ -100,16 +107,39 @@
         <button class="edit__department-button">Salvar</button>
       </div>
     </dialog>
+    <!-- Modal Deletar Departamento -->
     <dialog class="delete__department-modal">
       <div class="delete__depatment-div">
+        <button class="delete__department-close">X</button>
         <h1 class="delete__department-title">
-          Realmente deseja rmeover o Departamento<span
+          Realmente deseja remover o Departamento<span
             class="delete__department-department"
           >
             Nome </span
           >e demitir seus funcionários?
         </h1>
         <button class="delete__department-button">Remover</button>
+      </div>
+    </dialog>
+    <!-- Modal Editar Usuário -->
+    <dialog class="edit__user-modal">
+      <div class="edit__user-div">
+        <button class="edit__user-close">X</button>
+        <h1 class="edit__user-title">Editar Usuário</h1>
+        <input class="edit__user-name" type="text" />
+        <input class="edit__user-email" type="email" name="" id="" />
+        <button class="edit__user-button">Salvar</button>
+      </div>
+    </dialog>
+    <!-- Modal Deletar usuário -->
+    <dialog class="delete__user-modal">
+      <div class="delete__user-div">
+        <h1 class="delete__user-title">
+          Realmente deseja remover o usuário<span class="delete__user-span">
+            Nome</span
+          >?
+        </h1>
+        <but ton class="delete__user-button">Remover</but>
       </div>
     </dialog>
   </body>

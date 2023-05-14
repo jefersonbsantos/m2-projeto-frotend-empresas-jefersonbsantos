@@ -76,6 +76,7 @@ async function renderDepartments(category_name) {
           createDiv2.className = "icons__container";
           createIcon1.className = "view";
           createIcon1.src = "../assets/Vector.png";
+          createIcon1.dataset.id = index.id;
           createIcon2.className = "edit";
           createIcon2.src = "../assets/Vector_(1).png";
           createIcon2.dataset.id = index.id;
@@ -88,6 +89,7 @@ async function renderDepartments(category_name) {
           createDiv.append(createH3, createSpan1, createSpan2);
           createDiv2.append(createIcon1, createIcon2, createIcon3);
 
+          openViewDepartment(createIcon1);
           openEditDepartment(createIcon2);
           openDeleteDepartment(createIcon3);
         }
@@ -241,9 +243,13 @@ async function createDepartment() {
 
 function openEditDepartment(button) {
   const modal = document.querySelector(".edit__department-modal");
+  const closeButton = document.querySelector(".edit__department-close");
   button.addEventListener("click", (e) => {
     modal.showModal();
     editDepartment(e.target.dataset.id);
+  });
+  closeButton.addEventListener("click", (e) => {
+    modal.close();
   });
 }
 
@@ -252,6 +258,7 @@ async function editDepartment(department_id) {
   const editText = document.querySelector(".edit__department-text");
   const editButton = document.querySelector(".edit__department-button");
   const container = document.querySelector(".department__container");
+  const modal = document.querySelector(".edit__department-modal");
 
   const departments = await getDepartmentsReadById(department_id);
   editButton.addEventListener("click", async () => {
@@ -264,28 +271,27 @@ async function editDepartment(department_id) {
       headers: {
         Authorization: `bearer ${token}`,
         "Content-Type": "application/json",
-        body: JSON.stringify(info),
       },
+      body: JSON.stringify(info),
     })
       .then((res) => res.json())
       .then((data) => {
         container.innerHTML = "";
-        console.log(data);
-        console.log(department_id);
-        console.log(info);
-        console.log(departments.name);
-        console.log(editText.value);
         renderDepartments();
-        return data;
+        modal.close();
       });
   });
 }
 
 function openDeleteDepartment(button) {
   const modal = document.querySelector(".delete__department-modal");
+  const closeButton = document.querySelector(".delete__department-close");
   button.addEventListener("click", (e) => {
     modal.showModal();
     deleteDepartment(e.target.dataset.id);
+  });
+  closeButton.addEventListener("click", (e) => {
+    modal.close();
   });
 }
 
@@ -310,6 +316,20 @@ async function deleteDepartment(department_id) {
       });
   });
 }
+
+function openViewDepartment(button) {
+  const modal = document.querySelector(".admin__view-modal");
+  const closeButton = document.querySelector(".admin__view-close");
+  button.addEventListener("click", (e) => {
+    modal.showModal();
+    deleteDepartment(e.target.dataset.id);
+  });
+  closeButton.addEventListener("click", (e) => {
+    modal.close();
+  });
+}
+
+async function viewDepartment() {}
 
 logout();
 sectorSelect();
