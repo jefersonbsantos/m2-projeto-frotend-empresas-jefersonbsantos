@@ -1,5 +1,6 @@
 export const url = "http://localhost:3333";
-const token = JSON.parse(localStorage.getItem("token"));
+export const token = JSON.parse(localStorage.getItem("token"));
+export const isAdm = JSON.parse(localStorage.getItem("isAdm"));
 
 export async function getAllCategories() {
   const categories = await fetch(`${url}/categories/readAll`, {
@@ -38,4 +39,18 @@ export async function getDepartmentsReadById(department_id) {
     .then((response) => response.json())
     .then((data) => data);
   return departments;
+}
+
+export async function getEmployeesOutOfWork() {
+  const employeesOutOfWork = await fetch(`${url}/employees/outOfWork`, {
+    method: "GET",
+    headers: {
+      Authorization: `bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => data);
+
+  return employeesOutOfWork;
 }

@@ -1,4 +1,4 @@
-import { url } from "./requests.js";
+import { getEmployeesOutOfWork, url, isAdm } from "./requests.js";
 import {
   getCompaniesreadById,
   getAllCategories,
@@ -6,6 +6,16 @@ import {
 } from "./requests.js";
 
 const token = JSON.parse(localStorage.getItem("token"));
+
+function authentication() {
+  if (!isAdm && token) {
+    location.replace("./user.html");
+  } else if (!token) {
+    location.replace("./login.html");
+  }
+}
+
+authentication();
 
 function logout() {
   const button = document.querySelector(".logout__button");
@@ -168,14 +178,19 @@ async function renderUsers() {
         }
         createDiv2.className = "icons__container";
         createIcon1.className = "user__view";
+        createIcon1.dataset.id = index.id;
         createIcon1.src = "../assets/Vector_(1).png";
         createIcon2.className = "user__edit";
+        createIcon2.dataset.id = index.id;
         createIcon2.src = "../assets/Vector_(2).png";
 
         container.appendChild(createLi);
         createLi.append(createDiv, createDiv2);
         createDiv.append(createTitle, createSpan);
         createDiv2.append(createIcon1, createIcon2);
+
+        openEditUser(createIcon1);
+        openDeleteUser(createIcon2);
       });
     });
 }
@@ -320,16 +335,132 @@ async function deleteDepartment(department_id) {
 function openViewDepartment(button) {
   const modal = document.querySelector(".admin__view-modal");
   const closeButton = document.querySelector(".admin__view-close");
+  const select = document.querySelector(".admin__view-select");
   button.addEventListener("click", (e) => {
     modal.showModal();
-    deleteDepartment(e.target.dataset.id);
+    viewDepartment(e.target.dataset.id);
   });
   closeButton.addEventListener("click", (e) => {
     modal.close();
   });
 }
 
-async function viewDepartment() {}
+async function viewDepartment(department_id) {
+  const departmentInfo = await getDepartmentsReadById(department_id);
+  const employeesOutOfWork = await getEmployeesOutOfWork();
+  const title = document.querySelector(".admin__view-title");
+  const description = document.querySelector(".admin__view-title2");
+  const select = document.querySelector(".admin__view-select");
+  const hireButton = document.querySelector(".admin__view-hire-button");
+
+  title.innerHTML = departmentInfo.name;
+  description.innerHTML = departmentInfo.description;
+
+  const info = {
+    department_id: departmentInfo.id,
+  };
+  employeesOutOfWork.forEach(async (index) => {
+    const options = document.createElement("option");
+    options.innerHTML = index.name;
+    options.value = index.id;
+
+    select.appendChild(options);
+  });
+
+  hireButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const test = select.value;
+    const urlBase = `${url}/employees/hireEmployee/${test}`;
+    await fetch(urlBase, {
+      method: "PATCH",
+      headers: {
+        Authorization: `bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  });
+}
+
+function openEditUser(button) {
+  const modal = document.querySelector(".edit__user-modal");
+  const closeButton = document.querySelector(".edit__user-close");
+  button.addEventListener("click", (e) => {
+    modal.showModal();
+    editUser(e.target.dataset.id);
+  });
+  closeButton.addEventListener("click", (e) => {
+    modal.close();
+  });
+}
+
+async function editUser(employee_id) {
+  const urlBase = `${url}/employees/updateEmployee/${employee_id}`;
+  const nameInput = document.querySelector(".edit__user-name");
+  const emailInput = document.querySelector(".edit__user-email");
+  const button = document.querySelector(".edit__user-button");
+  const container = document.querySelector(".users__container");
+  const modal = document.querySelector(".edit__user-modal");
+
+  button.addEventListener("click", async () => {
+    const info = {
+      name: nameInput.value,
+      email: emailInput.name,
+    };
+    await fetch(urlBase, {
+      method: "PATCH",
+      headers: {
+        Authorization: `bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        container.innerHTML = "";
+        renderUsers();
+        modal.close();
+      });
+  });
+}
+
+function openDeleteUser(button) {
+  const modal = document.querySelector(".delete__user-modal");
+  const closeButton = document.querySelector(".delete__user-close");
+  button.addEventListener("click", (e) => {
+    modal.showModal();
+    deleteUser(e.target.dataset.id);
+  });
+  closeButton.addEventListener("click", () => {
+    modal.close();
+  });
+}
+
+async function deleteUser(employee_id) {
+  const urlBase = `${url}/employees/deleteEmployee/${employee_id}`;
+  const deleteButton = document.querySelector(".delete__user-button");
+  const container = document.querySelector(".users__container");
+  const modal = document.querySelector(".delete__user-modal");
+
+  deleteButton.addEventListener("click", async () => {
+    await fetch(urlBase, {
+      method: "DELETE",
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        container.innerHTML = "";
+        renderUsers();
+        modal.close();
+      });
+  });
+}
 
 logout();
 sectorSelect();

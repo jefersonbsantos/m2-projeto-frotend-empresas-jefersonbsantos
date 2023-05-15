@@ -1,4 +1,14 @@
-import { getAllCategories } from "./requests.js";
+import { getAllCategories, token, isAdm } from "./requests.js";
+
+function authentication() {
+  if (JSON.parse(localStorage.getItem("isAdm"))) {
+    location.replace("./project/pages/admin.html");
+  } else if (token) {
+    location.replace("./project/pages/user.html");
+  }
+}
+
+authentication();
 
 function toLoginPage() {
   const button = document.querySelector(".index-login__button");

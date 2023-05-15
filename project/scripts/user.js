@@ -1,4 +1,4 @@
-import { url } from "./requests.js";
+import { url, isAdm } from "./requests.js";
 const token = JSON.parse(localStorage.getItem("token"));
 function logout() {
   const button = document.querySelector(".logout__button");
@@ -7,6 +7,16 @@ function logout() {
     location.replace("./login.html");
   });
 }
+
+function authentication() {
+  if (isAdm) {
+    location.replace("./admin.html");
+  } else if (!token) {
+    location.replace("./login.html");
+  }
+}
+
+authentication();
 
 async function user() {
   const employed = document.querySelector(".company__container");

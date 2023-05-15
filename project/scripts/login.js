@@ -1,4 +1,14 @@
-import { url } from "./requests.js";
+import { url, token, isAdm } from "./requests.js";
+
+function authentication() {
+  if (JSON.parse(localStorage.getItem("isAdm"))) {
+    location.replace("./admin.html");
+  } else if (token) {
+    location.replace("./user.html");
+  }
+}
+
+authentication();
 
 function goToHome() {
   const homeButton = document.querySelector(".home__button");
