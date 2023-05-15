@@ -270,10 +270,108 @@
   margin-bottom: 35px;
 }
 
-.delete__department-department {
+.delete__department-button {
+  width: 422px;
+  height: 38px;
+  background-color: #ff5630;
+  border: none;
+  color: var(--mode);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 auto;
 }
 
-.delete__department-button {
+.edit__user-modal {
+  font-family: var(--font-1);
+  margin: auto;
+}
+
+.edit__user-div {
+  display: flex;
+  flex-direction: column;
+  width: 506px;
+  height: 359px;
+  background-color: var(--mode);
+  padding: 40px;
+}
+
+.edit__user-close {
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
+  font-weight: bold;
+  border: 1px solid transparent;
+  font-size: 18px;
+}
+
+.edit__user-title {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+.edit__user-name {
+  width: 410px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  border: 1px solid #00000030;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.edit__user-email {
+  width: 410px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  border: 1px solid #00000030;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.edit__user-button {
+  width: 422px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: var(--action-1);
+  border: none;
+  color: var(--mode);
+  cursor: pointer;
+}
+
+.delete__user-modal {
+  font-family: var(--font-1);
+  margin: auto;
+}
+
+.delete__user-div {
+  display: flex;
+  flex-direction: column;
+  width: 733px;
+  height: 292px;
+  background-color: var(--mode);
+}
+
+.delete__user-close {
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
+  font-weight: bold;
+  border: 1px solid transparent;
+  font-size: 18px;
+}
+
+.delete__user-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 100px;
+  margin-top: 20px;
+}
+
+.delete__user-button {
   width: 422px;
   height: 38px;
   background-color: #ff5630;

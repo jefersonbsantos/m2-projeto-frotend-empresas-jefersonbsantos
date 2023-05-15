@@ -348,6 +348,7 @@ function openViewDepartment(button) {
 async function viewDepartment(department_id) {
   const departmentInfo = await getDepartmentsReadById(department_id);
   const employeesOutOfWork = await getEmployeesOutOfWork();
+  const modal = document.querySelector(".admin__view-modal");
   const title = document.querySelector(".admin__view-title");
   const description = document.querySelector(".admin__view-title2");
   const select = document.querySelector(".admin__view-select");
@@ -382,8 +383,60 @@ async function viewDepartment(department_id) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        modal.close();
       });
   });
+
+  const urlEmployees = `${url}/companies/readById/${departmentInfo.company.id}`;
+  await fetch(urlEmployees, {
+    method: "GET",
+    headers: {
+      Authorization: `bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      data.employees.forEach(async (index) => {
+        const employeesContainer = document.querySelector(
+          ".view-list__container"
+        );
+        const createLi = document.createElement("li");
+        const createTitle = document.createElement("h3");
+        const createSpan = document.createElement("span");
+        const createButton = document.createElement("button");
+
+        createLi.className = "admin__view-card";
+        createTitle.className = "view-card__title";
+        createTitle.innerHTML = index.name;
+        createSpan.className = "view-card__span";
+        createSpan.innerHTML = data.name;
+        createButton.className = "view-card__button";
+        createButton.dataset.id = data.id;
+        createButton.innerText = "Desligar";
+
+        employeesContainer.appendChild(createLi);
+        createLi.append(createTitle, createSpan, createButton);
+
+        createButton.addEventListener("click", async () => {
+          await dismissEmployee(index.id);
+          modal.close();
+        });
+      });
+    });
+}
+
+async function dismissEmployee(employee_id) {
+  const urlDismiss = `${url}/employees/dismissEmployee/${employee_id}`;
+  await fetch(urlDismiss, {
+    method: "PATCH",
+    headers: {
+      Authorization: `bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => data);
 }
 
 function openEditUser(button) {
@@ -431,6 +484,7 @@ async function editUser(employee_id) {
 function openDeleteUser(button) {
   const modal = document.querySelector(".delete__user-modal");
   const closeButton = document.querySelector(".delete__user-close");
+  const span = document.querySelector(".delete__user-span");
   button.addEventListener("click", (e) => {
     modal.showModal();
     deleteUser(e.target.dataset.id);
